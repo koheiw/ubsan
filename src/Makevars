@@ -1,1 +1,12 @@
-PKG_CXXFLAGS = -fsanitize=address -fno-omit-frame-pointer -g
+#export LD_PRELOAD=$(gcc -print-file-name=libasan.so)
+#PKG_LIBS = -lasan
+#CXX = "g++ -fsanitize=address -fno-omit-frame-pointer"
+#CXX = g++
+#PKG_LIBS = -static-libasan -fsanitize=address
+#PKG_CXXFLAGS = -fsanitize=address
+# -fno-omit-frame-pointer -fvisibility=hidden -fvisibility-inlines-hidden
+#LDFLAGS = -l"$(gcc -print-file-name=libasan.so)"
+#PKG_CXXFLAGS = -fsanitize=address -fno-omit-frame-pointer -fno-sanitize-address-use-after-scope -D_GCL_RHACK_ -DGC_NO_MUTEX -m64 -ldl -lpthread -Wall -pipe -pedantic -Wno-unused -DNDEBUG -g -std=c++17
+#PKG_CFLAGS = -fsanitize=address -D_GCL_RHACK_ -fno-sanitize-address-use-after-scope
+CXX = g++ -fsanitize=address -fno-omit-frame-pointer
+
