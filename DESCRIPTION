@@ -1,0 +1,11 @@
+Package: ubsan
+Type: Package
+Title: Package to how to enable UBSAN test
+Version: 1.0
+Date: 2024-08-24
+Author: Kohei Watanabe
+Maintainer: Your Name <your@email.com>
+Description: Package to how to enable UBSAN test for CRANu.
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.12)
+LinkingTo: Rcpp
