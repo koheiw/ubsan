@@ -19,6 +19,15 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// no_memory_leak
+void no_memory_leak();
+RcppExport SEXP _ubsan_no_memory_leak() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    no_memory_leak();
+    return R_NilValue;
+END_RCPP
+}
 // has_asan
 void has_asan();
 RcppExport SEXP _ubsan_has_asan() {
@@ -31,6 +40,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ubsan_memory_leak", (DL_FUNC) &_ubsan_memory_leak, 0},
+    {"_ubsan_no_memory_leak", (DL_FUNC) &_ubsan_no_memory_leak, 0},
     {"_ubsan_has_asan", (DL_FUNC) &_ubsan_has_asan, 0},
     {NULL, NULL, 0}
 };

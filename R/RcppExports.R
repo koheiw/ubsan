@@ -5,6 +5,10 @@ memory_leak <- function() {
     invisible(.Call(`_ubsan_memory_leak`))
 }
 
+no_memory_leak <- function() {
+    invisible(.Call(`_ubsan_no_memory_leak`))
+}
+
 has_asan <- function() {
     invisible(.Call(`_ubsan_has_asan`))
 }

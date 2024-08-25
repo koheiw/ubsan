@@ -17,6 +17,16 @@ void memory_leak() {
 }
 
 // [[Rcpp::export]]
+void no_memory_leak() {
+    
+    std::cout << "Started Program\n";
+    int* i = new int(); 
+    *i = 42;
+    std::cout << "Expected i: " << *i << std::endl;
+    delete i;
+}
+
+// [[Rcpp::export]]
 void has_asan() {
 #if defined(__clang__)
 #if __has_feature(address_sanitizer) //clang
