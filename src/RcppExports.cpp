@@ -19,9 +19,19 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// has_asan
+void has_asan();
+RcppExport SEXP _ubsan_has_asan() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    has_asan();
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ubsan_memory_leak", (DL_FUNC) &_ubsan_memory_leak, 0},
+    {"_ubsan_has_asan", (DL_FUNC) &_ubsan_has_asan, 0},
     {NULL, NULL, 0}
 };
 
