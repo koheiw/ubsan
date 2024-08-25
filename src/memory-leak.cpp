@@ -1,5 +1,5 @@
-// g++ -o memory-leak memory_leak.cpp -fsanitize=address -fno-omit-frame-pointer -g
-// clang++ -o memory-leak memory_leak.cpp -fsanitize=address -fno-omit-frame-pointer -g
+// g++ -o memory-leak memory-leak.cpp -fsanitize=address -fno-omit-frame-pointer -g
+// clang++ -o memory-leak memory-leak.cpp -fsanitize=address -fno-omit-frame-pointer -g
 
 #include <iostream>
 int main() {
