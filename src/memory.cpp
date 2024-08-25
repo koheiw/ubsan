@@ -20,11 +20,15 @@ void memory_leak() {
 void has_asan() {
 #if defined(__clang__)
 #if __has_feature(address_sanitizer) //clang
-    std::cout << "Has address_sanitiezer (clang)\n";
+    std::cout << "Has address_sanitiezer (clang)" << std::endl;
+#else 
+    std::cout << "Dosen't have address_sanitiezer (clang)" << std::endl;
 #endif
 #else
 #if defined(__SANITIZE_ADDRESS__) // gcc
     std::cout << "Has address_sanitiezer (gcc)\n";
+#else 
+    std::cout << "Dosen't have address_sanitiezer (gcc)" << std::endl;
 #endif
 #endif
 }
